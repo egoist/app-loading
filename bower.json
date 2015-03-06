@@ -1,0 +1,24 @@
+{
+  "name": "app-loading",
+  "main": "app-loading.js",
+  "authors": [
+    "Kchan Zen <kchanzen@gmail.com>"
+  ],
+  "description": "Focus on Medium-like app loading style",
+  "keywords": [
+    "progress",
+    "medium",
+    "loading"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kchanzen/app-loading",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib",
+    "index.html"
+  ]
+}
