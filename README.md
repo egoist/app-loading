@@ -1,8 +1,11 @@
 # app-loading
 
-live demo: [check it out](http://kchanzen.github.io/app-loading)
+**bower install app-loading**
 
-WIP.
+```javascript
+appLoading.start()
+appLoading.stop()
+```
 
 ## Changelog
 
