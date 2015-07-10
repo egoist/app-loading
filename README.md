@@ -6,6 +6,10 @@ WIP.
 
 ## Changelog
 
+**v0.0.2**
+- Clean code
+- Update demo
+
 **v0.0.1**
 
 - Prototype.

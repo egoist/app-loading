@@ -1,8 +1,8 @@
 {
   "name": "app-loading",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Focus on Medium-like app loading style",
-  "main": "dist/app-loading.js",
+  "main": "app-loading.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
