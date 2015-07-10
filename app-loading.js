@@ -4,7 +4,7 @@ app-loading
 (c) 2015
 github.com/kchanzen/app-loading
  */
-(function(window, document) {
+(function(W, D) {
   'use strict';
   var appLoading, getProgressBar, initProgressBar, options, showProgressBar;
   appLoading = {};
@@ -15,7 +15,7 @@ github.com/kchanzen/app-loading
   };
   getProgressBar = function() {
     var $progressbar;
-    $progressbar = document.querySelector('.' + options.loadingBar);
+    $progressbar = D.querySelector('.' + options.loadingBar);
     if (!$progressbar) {
       initProgressBar();
       $progressbar = getProgressBar();
@@ -24,17 +24,17 @@ github.com/kchanzen/app-loading
   };
   initProgressBar = function() {
     var $progressbarElement;
-    $progressbarElement = document.createElement('div');
-    $progressbarElement.innerHTML = '<div class="loading-bar"></div>';
-    return document.body.appendChild($progressbarElement);
+    $progressbarElement = D.createElement('div');
+    $progressbarElement.className = 'loading-bar';
+    return D.body.appendChild($progressbarElement);
   };
   showProgressBar = function() {
     var $progressbar;
     $progressbar = getProgressBar();
-    if (document.body.classList) {
-      return document.body.classList.add('app-loading');
+    if (D.body.classList) {
+      return D.body.classList.add('app-loading');
     } else {
-      return document.body.className += ' app-loading';
+      return D.body.className += ' app-loading';
     }
   };
   appLoading.start = function(type, callback) {
@@ -51,11 +51,11 @@ github.com/kchanzen/app-loading
     }
   };
   appLoading.stop = function() {
-    if (document.body.classList) {
-      return document.body.classList.remove(options.className);
+    if (D.body.classList) {
+      return D.body.classList.remove(options.className);
     } else {
-      return document.body.className = document.body.className.replace(new RegExp('(^|\\b)' + options.className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+      return D.body.className = D.body.className.replace(new RegExp('(^|\\b)' + options.className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
     }
   };
-  return window.appLoading = appLoading;
+  return W.appLoading = appLoading;
 })(window, document);

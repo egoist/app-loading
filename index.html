@@ -2,14 +2,62 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>kchanzen/app-loading example</title>
+  <title>app-loading example</title>
   <link rel="stylesheet" type="text/css" href="./app-loading.css">
+  <style type="text/css">
+    body {
+      font-family: "Helvetica Neue", Hevetica, Arial, sans-serif;
+      overflow: hidden;
+    }
+    .main {
+      width: 600px;
+      margin: 0 auto;
+      padding: 60px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 34px;
+      font: bold 80px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    p {
+      font: 28px/34px Georgia, "Times New Roman", Palatino, serif;
+    }
+    .button {
+      cursor: pointer;
+      background-color: #fff;
+      border: 1px solid #e2e2e2;
+      border-radius: 3px;
+      outline: none;
+      padding: 8px 12px;
+    }
+    .button:hover {
+      background-color: #f9f9f9;
+    }
+    footer {
+      margin: 120px 30px 30px 30px;
+      color: #999;
+      font-size: 12px;
+    }
+    a {
+      color: #999;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #778087;
+    }
+  </style>
 </head>
 <body>
 <div class="main">
+  <h1>app-loading</h1>
+  <h2>Focus on Medium-like app loading style</h2>
   <button class="button" onclick="appLoading.start()">Start</button>
   <button class="button" onclick="appLoading.stop()">Stop</button>
+
+  <footer>
+    An <a href="http://insekai.com">INSEKAI</a> Project &nbsp;•&nbsp; <a href="https://github.com/aprilorange/app-loading">View source on GitHub</a>
+  </footer>
 </div>
-<script src="./app-loading.js"></script>
+<script src="./app-loading.min.js"></script>
 </body>
 </html>

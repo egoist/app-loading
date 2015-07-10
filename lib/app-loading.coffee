@@ -4,20 +4,20 @@ app-loading
 github.com/kchanzen/app-loading
 ### 
 
-((window, document) ->
+((W, D) ->
   'use strict'
 
   appLoading = {}
 
-  options = {
-    className: 'app-loading',
-    loadingBar: 'loading-bar',
+  options = 
+    className: 'app-loading'
+    loadingBar: 'loading-bar'
     type: 'medium'
-  }
+
 
   getProgressBar = ->
 
-    $progressbar = document.querySelector '.' + options.loadingBar
+    $progressbar = D.querySelector '.' + options.loadingBar
 
     if not $progressbar
       initProgressBar() 
@@ -27,19 +27,19 @@ github.com/kchanzen/app-loading
 
   initProgressBar = ->
 
-    $progressbarElement = document.createElement 'div'
-    $progressbarElement.innerHTML = '<div class="loading-bar"></div>'
+    $progressbarElement = D.createElement 'div'
+    $progressbarElement.className = 'loading-bar'
 
-    document.body.appendChild $progressbarElement
+    D.body.appendChild $progressbarElement
 
   showProgressBar = ->
 
     $progressbar = getProgressBar()
 
-    if document.body.classList 
-      document.body.classList.add 'app-loading' 
+    if D.body.classList 
+      D.body.classList.add 'app-loading' 
     else 
-      document.body.className += ' app-loading'
+      D.body.className += ' app-loading'
 
   appLoading.start = (type, callback) ->
 
@@ -53,12 +53,12 @@ github.com/kchanzen/app-loading
 
   appLoading.stop = ->
 
-    if document.body.classList
-      document.body.classList.remove options.className
+    if D.body.classList
+      D.body.classList.remove options.className
     else
-      document.body.className = document.body.className.replace(new RegExp('(^|\\b)' + options.className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
+      D.body.className = D.body.className.replace(new RegExp('(^|\\b)' + options.className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
 
 
-  window.appLoading = appLoading
+  W.appLoading = appLoading
   
 ) window, document
