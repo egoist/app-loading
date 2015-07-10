@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  z-index: 800;
+  z-index: 99999;
   background: #60d778;
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
