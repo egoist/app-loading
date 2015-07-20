@@ -16,9 +16,9 @@ gulp.task 'coffee', ->
   stream = gulp.src 'lib/app-loading.coffee'
     .pipe coffee bare: true
     .pipe gulp.dest __dirname
+  stream
 
-
-gulp.task 'js', ->
+gulp.task 'js', ['coffee'], ->
   stream = gulp.src './app-loading.js'
     .pipe sourcemaps.init()
     .pipe uglify()
@@ -26,11 +26,12 @@ gulp.task 'js', ->
       suffix: '.min'
     .pipe sourcemaps.write '.'
     .pipe gulp.dest '.'
+  stream
 
 gulp.task 'watch', ->
-  gulp.watch './lib/*.coffee', ['coffee', 'js']
+  gulp.watch './lib/*.coffee', ['js']
 
 
-gulp.task 'build', ['coffee', 'js']
+gulp.task 'build', ['js']
 
-gulp.task 'default', ['coffee', 'serve', 'watch']
+gulp.task 'default', ['build', 'serve', 'watch']

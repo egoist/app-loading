@@ -1,55 +1,63 @@
-### 
+###
 app-loading
 (c) 2015
-github.com/kchanzen/app-loading
-### 
+github.com/aprilorange/app-loading
+###
 
 ((W, D) ->
   'use strict'
 
   appLoading = {}
 
-  options = 
+  options =
     className: 'app-loading'
     loadingBar: 'loading-bar'
     type: 'medium'
+    color: null
 
+  W.loadingBarColor = null
 
-  getProgressBar = ->
+  getProgressBar = (force) ->
 
     $progressbar = D.querySelector '.' + options.loadingBar
 
+    # get bar only
+    return $progressbar if not force
+    # init bar
     if not $progressbar
-      initProgressBar() 
+      initProgressBar()
       $progressbar = getProgressBar()
 
+    if options.color
+      color = options.color
+    else if W.loadingBarColor
+      color = W.loadingBarColor
+    else
+      color = '#60d778'
+    $progressbar.style.background = color
     $progressbar
 
   initProgressBar = ->
 
     $progressbarElement = D.createElement 'div'
-    $progressbarElement.className = 'loading-bar'
+    $progressbarElement.className = options.loadingBar
 
     D.body.appendChild $progressbarElement
 
   showProgressBar = ->
 
-    $progressbar = getProgressBar()
+    $progressbar = getProgressBar true
 
-    if D.body.classList 
-      D.body.classList.add 'app-loading' 
-    else 
+    if D.body.classList
+      D.body.classList.add 'app-loading'
+    else
       D.body.className += ' app-loading'
 
-  appLoading.start = (type, callback) ->
+  appLoading.start = (color) ->
 
-    switch typeof type
-      when 'string' then options.type = type
-      when 'function' then callback = type
-
+    options.color = color
     showProgressBar()
 
-    callback() if callback
 
   appLoading.stop = ->
 
@@ -58,7 +66,11 @@ github.com/kchanzen/app-loading
     else
       D.body.className = D.body.className.replace(new RegExp('(^|\\b)' + options.className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
 
+  appLoading.setColor = (color) ->
+    W.loadingBarColor = color
+    bar = getProgressBar()
+    bar.style.background = color if bar
 
   W.appLoading = appLoading
-  
+
 ) window, document
