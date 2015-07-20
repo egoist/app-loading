@@ -25,7 +25,7 @@ appLoading.start('rgba(76, 207, 177, 0.7)')
 
 ## Changelog
 
-**v0.0.3**
+**v0.0.3** - 2015/7/20
 - add `setColor` method
 
 **v0.0.2**
