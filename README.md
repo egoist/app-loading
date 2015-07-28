@@ -1,3 +1,5 @@
+##[Research: to build the next Medium-like WHAT ?](https://github.com/aprilorange/app-loading/issues/1)
+
 # app-loading
 
 **bower install app-loading**
