@@ -25,7 +25,7 @@ appLoading.start('rgba(76, 207, 177, 0.7)')
 
 ## LiveScript
 
-A really simple implement in LiveScription, not yet full-featured. [Live edit on JS Bin](http://jsbin.com/wowera/edit?js,output)
+A really simple implement in LiveScript, not yet full-featured. [Live edit on JS Bin](http://jsbin.com/wowera/edit?js,output)
 
 ```livescript
 ((W, D) ->
