@@ -49,7 +49,7 @@ A really simple implement in LiveScript, not yet full-featured. [Live edit on JS
     @stop = ->
       D.body.classList.remove \app-loading
       
-  D.appLoading = appLoading
+  W.appLoading = appLoading
     
 ) window, document
 ```
