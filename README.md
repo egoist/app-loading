@@ -1,5 +1,3 @@
-##[Research: to build the next Medium-like WHAT ?](https://github.com/aprilorange/app-loading/issues/1)
-
 # app-loading
 
 **bower install app-loading**
@@ -9,7 +7,7 @@ appLoading.start()
 appLoading.stop()
 ```
 
-## Furthur usage
+## Advance usage
 
 ```javascript
 // set up some custom color
@@ -23,6 +21,37 @@ appLoading.setColor(null)
 appLoading.start('#f83')
 appLoading.start('yellow')
 appLoading.start('rgba(76, 207, 177, 0.7)')
+```
+
+## LiveScript
+
+A really simple implement in LiveScription, not yet full-featured. [Live edit on JS Bin](http://jsbin.com/wowera/edit?js,output)
+
+```livescript
+((W, D) ->
+
+  class appLoading
+    $$ = D.query-selector.bind document
+    
+    init-bar = ->
+      bar = D.create-element \div
+      bar.className = 'loading-bar'
+      D.body.appendChild bar
+      
+    get-bar = ->
+      init-bar! if not $$ \.loading-bar     
+      $$ \.loading-bar
+      
+    @start = ->
+      get-bar!
+      D.body.classList.add 'app-loading'
+      
+    @stop = ->
+      D.body.classList.remove 'app-loading'
+      
+  D.appLoading = appLoading
+    
+) window, document
 ```
 
 ## Changelog
