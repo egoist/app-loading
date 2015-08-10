@@ -35,7 +35,7 @@ A really simple implement in LiveScript, not yet full-featured. [Live edit on JS
     
     init-bar = ->
       bar = D.create-element \div
-      bar.className = 'loading-bar'
+      bar.className = \loading-bar
       D.body.appendChild bar
       
     get-bar = ->
@@ -44,10 +44,10 @@ A really simple implement in LiveScript, not yet full-featured. [Live edit on JS
       
     @start = ->
       get-bar!
-      D.body.classList.add 'app-loading'
+      D.body.classList.add \app-loading
       
     @stop = ->
-      D.body.classList.remove 'app-loading'
+      D.body.classList.remove \app-loading
       
   D.appLoading = appLoading
     
