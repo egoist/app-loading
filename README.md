@@ -1,5 +1,7 @@
 # app-loading
 
+**[No longer maintained]** Please take a look at the [ES6 version](https://github.com/aprilorange/app-loading-es6) of app-loading
+
 **bower install app-loading**
 
 ```javascript
