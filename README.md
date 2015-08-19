@@ -23,6 +23,12 @@ appLoading.start('yellow')
 appLoading.start('rgba(76, 207, 177, 0.7)')
 ```
 
+## ECMAScript 2015
+
+**bower install app-loading-es6**
+
+A.K.A ES6, please refer to https://github.com/aprilorange/app-loading-es6
+
 ## LiveScript
 
 A really simple implement in LiveScript, not yet full-featured. [Live edit on JS Bin](http://jsbin.com/wowera/edit?js,output)
