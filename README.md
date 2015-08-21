@@ -1,12 +1,21 @@
 # app-loading
 
-**[No longer maintained]** Please take a look at the [ES6 version](https://github.com/aprilorange/app-loading-es6) of app-loading
+Focus on Medium-like app loading style ;-)
 
-**bower install app-loading**
+## Quick start
+
+**bower install app-loading** works with browsers
 
 ```javascript
 appLoading.start()
 appLoading.stop()
+```
+
+**npm install app-loading** works with webpack
+
+```javascript
+import appLoading from 'app-loading'
+appLoading.start()
 ```
 
 ## Advance usage
@@ -64,10 +73,16 @@ A really simple implement in LiveScript, not yet full-featured. [Live edit on JS
 
 ## Changelog
 
-**v0.0.3** - 2015/7/20
+**v0.0.4** - 2015/08/22
+
+- Rewrite in ES6
+
+**v0.0.3** - 2015/07/20
+
 - add `setColor` method
 
 **v0.0.2**
+
 - Clean code
 - Update demo
 

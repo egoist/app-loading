@@ -1,73 +1,87 @@
+/***********************************************
+ *app-loading
+ *(c) 2015
+ *github.com/aprilorange/app-loading
+***********************************************/
 
-/*
-app-loading
-(c) 2015
-github.com/aprilorange/app-loading
- */
-(function(W, D) {
-  'use strict';
-  var appLoading, getProgressBar, initProgressBar, options, showProgressBar;
-  appLoading = {};
-  options = {
-    className: 'app-loading',
-    loadingBar: 'loading-bar',
-    type: 'medium',
-    color: null
-  };
-  W.loadingBarColor = null;
-  getProgressBar = function(force) {
-    var $progressbar, color;
-    $progressbar = D.querySelector('.' + options.loadingBar);
-    if (!force) {
-      return $progressbar;
-    }
-    if (!$progressbar) {
-      initProgressBar();
-      $progressbar = getProgressBar();
-    }
-    if (options.color) {
-      color = options.color;
-    } else if (W.loadingBarColor) {
-      color = W.loadingBarColor;
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+(function () {
+
+  var definition = function definition(W, D) {
+    var appLoading = (function () {
+      function appLoading() {
+        _classCallCheck(this, appLoading);
+
+        this.opts = {
+          className: 'app-loading',
+          loadingBar: '.loading-bar',
+          color: null
+        };
+      }
+
+      _createClass(appLoading, [{
+        key: 'start',
+        value: function start(color) {
+          console.log('start');
+          this.showBar(color);
+        }
+      }, {
+        key: 'stop',
+        value: function stop() {
+          console.log('stop');
+          this.hideBar();
+        }
+      }, {
+        key: 'showBar',
+        value: function showBar(color) {
+          var bar = this.getBar();
+          if (this.opts.color) bar.style.backgroundColor = this.opts.color;
+          if (color) bar.style.backgroundColor = color;
+          D.querySelector('body').classList.add(this.opts.className);
+        }
+      }, {
+        key: 'hideBar',
+        value: function hideBar() {
+          D.querySelector('body').classList.remove(this.opts.className);
+          this.getBar().style.backgroundColor = null;
+        }
+      }, {
+        key: 'getBar',
+        value: function getBar() {
+          var bar = D.querySelector(this.opts.loadingBar);
+          if (!bar) this.initBar();
+          return bar;
+        }
+      }, {
+        key: 'initBar',
+        value: function initBar() {
+          var bar = D.createElement('div');
+          bar.className = this.opts.loadingBar.substring(1);
+          D.body.appendChild(bar);
+        }
+      }, {
+        key: 'setColor',
+        value: function setColor(color) {
+          this.opts.color = color;
+        }
+      }]);
+
+      return appLoading;
+    })();
+
+    return new appLoading();
+  };(function (context, name, definition) {
+    if (typeof module !== 'undefined') {
+      module.exports = definition;
+    } else if (typeof define === 'function' && define.amd) {
+      define(definition);
     } else {
-      color = '#60d778';
+      context[name] = definition;
     }
-    $progressbar.style.background = color;
-    return $progressbar;
-  };
-  initProgressBar = function() {
-    var $progressbarElement;
-    $progressbarElement = D.createElement('div');
-    $progressbarElement.className = options.loadingBar;
-    return D.body.appendChild($progressbarElement);
-  };
-  showProgressBar = function() {
-    var $progressbar;
-    $progressbar = getProgressBar(true);
-    if (D.body.classList) {
-      return D.body.classList.add('app-loading');
-    } else {
-      return D.body.className += ' app-loading';
-    }
-  };
-  appLoading.start = function(color) {
-    options.color = color;
-    return showProgressBar();
-  };
-  appLoading.stop = function() {
-    if (D.body.classList) {
-      return D.body.classList.remove(options.className);
-    } else {
-      return D.body.className = D.body.className.replace(new RegExp('(^|\\b)' + options.className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
-  };
-  appLoading.setColor = function(color) {
-    var bar;
-    W.loadingBarColor = color;
-    bar = getProgressBar();
-    if (bar) {
-      return bar.style.background = color;
-    }
-  };
-  return W.appLoading = appLoading;
-})(window, document);
+  })(window, 'appLoading', definition(window, document));
+})();

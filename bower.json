@@ -1,0 +1,19 @@
+{
+  "name": "app-loading",
+  "main": "app-loading.js",
+  "homepage": "https://github.com/aprilorange/app-loading",
+  "authors": [
+    "aprilorange <aprilorange.net@icloud.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "test.*",
+    "lib",
+    "index.html"
+  ]
+}
