@@ -34,43 +34,6 @@ appLoading.start('yellow')
 appLoading.start('rgba(76, 207, 177, 0.7)')
 ```
 
-## ECMAScript 2015
-
-**bower install app-loading-es6**
-
-A.K.A ES6, please refer to https://github.com/aprilorange/app-loading-es6
-
-## LiveScript
-
-A really simple implement in LiveScript, not yet full-featured. [Live edit on JS Bin](http://jsbin.com/wowera/edit?js,output)
-
-```livescript
-((W, D) ->
-
-  class appLoading
-    $$ = D.query-selector.bind document
-    
-    init-bar = ->
-      bar = D.create-element \div
-      bar.className = \loading-bar
-      D.body.appendChild bar
-      
-    get-bar = ->
-      init-bar! if not $$ \.loading-bar     
-      $$ \.loading-bar
-      
-    @start = ->
-      get-bar!
-      D.body.classList.add \app-loading
-      
-    @stop = ->
-      D.body.classList.remove \app-loading
-      
-  W.appLoading = appLoading
-    
-) window, document
-```
-
 ## Changelog
 
 **v0.0.4** - 2015/08/22
