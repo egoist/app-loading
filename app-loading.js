@@ -27,13 +27,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(appLoading, [{
         key: 'start',
         value: function start(color) {
-          console.log('start');
           this.showBar(color);
         }
       }, {
         key: 'stop',
         value: function stop() {
-          console.log('stop');
           this.hideBar();
         }
       }, {
