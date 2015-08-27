@@ -1,6 +1,6 @@
 {
   "name": "app-loading",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "Focus on Medium-like app loading style",
   "main": "app-loading.js",
   "scripts": {
@@ -16,11 +16,15 @@
   "author": "AprilOrange <aprilorange.net@icloud.com>",
   "license": "MIT",
   "devDependencies": {
+    "babel-eslint": "^4.1.0",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-serve": "^1.0.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

@@ -1,8 +1,8 @@
-/***********************************************
- *app-loading
- *(c) 2015
- *github.com/aprilorange/app-loading
-***********************************************/
+/*
+ * app-loading
+ * (c) 2015
+ * github.com/aprilorange/app-loading
+ */
 
 'use strict';
 
@@ -13,9 +13,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 (function () {
 
   var definition = function definition(W, D) {
-    var appLoading = (function () {
-      function appLoading() {
-        _classCallCheck(this, appLoading);
+    var AppLoading = (function () {
+      function AppLoading() {
+        _classCallCheck(this, AppLoading);
 
         this.opts = {
           className: 'app-loading',
@@ -24,7 +24,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         };
       }
 
-      _createClass(appLoading, [{
+      _createClass(AppLoading, [{
         key: 'start',
         value: function start(color) {
           this.showBar(color);
@@ -38,8 +38,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: 'showBar',
         value: function showBar(color) {
           var bar = this.getBar();
-          if (this.opts.color) bar.style.backgroundColor = this.opts.color;
-          if (color) bar.style.backgroundColor = color;
+          if (this.opts.color) {
+            bar.style.backgroundColor = this.opts.color;
+          }
+          if (color) {
+            bar.style.backgroundColor = color;
+          }
           D.querySelector('body').classList.add(this.opts.className);
         }
       }, {
@@ -52,7 +56,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: 'getBar',
         value: function getBar() {
           var bar = D.querySelector(this.opts.loadingBar);
-          if (!bar) this.initBar();
+          if (!bar) {
+            this.initBar();
+          }
           return bar;
         }
       }, {
@@ -69,16 +75,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }]);
 
-      return appLoading;
+      return AppLoading;
     })();
 
-    return new appLoading();
+    return new AppLoading();
   };(function (context, name, definition) {
     if (typeof module !== 'undefined') {
       module.exports = definition;
-    } else if (typeof define === 'function' && define.amd) {
-      define(definition);
-    } else {
+    } else if (typeof context !== 'undefined') {
       context[name] = definition;
     }
   })(window, 'appLoading', definition(window, document));
