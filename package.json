@@ -1,6 +1,6 @@
 {
   "name": "app-loading",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "description": "Focus on Medium-like app loading style",
   "main": "app-loading.js",
   "scripts": {

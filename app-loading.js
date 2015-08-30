@@ -57,7 +57,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getBar() {
           var bar = D.querySelector(this.opts.loadingBar);
           if (!bar) {
-            this.initBar();
+            bar = this.initBar();
           }
           return bar;
         }
@@ -67,6 +67,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var bar = D.createElement('div');
           bar.className = this.opts.loadingBar.substring(1);
           D.body.appendChild(bar);
+          return bar;
         }
       }, {
         key: 'setColor',
