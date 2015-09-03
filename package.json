@@ -1,10 +1,10 @@
 {
   "name": "app-loading",
-  "version": "0.0.43",
+  "version": "0.0.5",
   "description": "Focus on Medium-like app loading style",
   "main": "app-loading.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "gulp test",
     "dev": "gulp",
     "build": "gulp build"
   },
@@ -19,6 +19,7 @@
     "babel-eslint": "^4.1.0",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.2.1",
+    "gulp-qunit": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-serve": "^1.0.0",
     "gulp-sourcemaps": "^1.5.2",

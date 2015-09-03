@@ -73,6 +73,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: 'setColor',
         value: function setColor(color) {
           this.opts.color = color;
+          this.getBar().style.backgroundColor = color;
         }
       }]);
 
