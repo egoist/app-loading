@@ -33,6 +33,12 @@ appLoading.setColor(null)
 appLoading.start('#f83')
 appLoading.start('yellow')
 appLoading.start('rgba(76, 207, 177, 0.7)')
+
+// use on server side
+if (typeof window !== 'undefined') {
+  import appLoading from 'appLoading'
+  appLoading.start()
+}
 ```
 
 ## Changelog
