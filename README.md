@@ -36,7 +36,7 @@ appLoading.start('rgba(76, 207, 177, 0.7)')
 
 // use on server side
 if (typeof window !== 'undefined') {
-  import appLoading from 'appLoading'
+  import appLoading from 'app-loading'
   appLoading.start()
 }
 ```
