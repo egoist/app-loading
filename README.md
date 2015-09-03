@@ -43,6 +43,10 @@ if (typeof window !== 'undefined') {
 
 ## Changelog
 
+**v0.0.5** - 2015/09/03
+
+- Fix `setColor` and add test
+
 **v0.0.4** - 2015/08/22
 
 - Rewrite in ES6
