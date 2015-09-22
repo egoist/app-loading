@@ -1,7 +1,7 @@
 # app-loading
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
+[![NPM](https://nodei.co/npm/app-loading.png?downloads=true&stars=true)](https://nodei.co/npm/app-loading/)
 
 ## Quick start
 
