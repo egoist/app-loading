@@ -1,7 +1,7 @@
 /*
  * app-loading
  * (c) 2015
- * github.com/aprilorange/app-loading
+ * github.com/egoist/app-loading
  */
 
 'use strict';
@@ -28,11 +28,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: 'start',
         value: function start(color) {
           this.showBar(color);
+          return this;
         }
       }, {
         key: 'stop',
         value: function stop() {
           this.hideBar();
+          return this;
         }
       }, {
         key: 'showBar',
@@ -74,6 +76,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function setColor(color) {
           this.opts.color = color;
           this.getBar().style.backgroundColor = color;
+          return this;
         }
       }]);
 

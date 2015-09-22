@@ -14,6 +14,11 @@ test('restart loading with red color', function() {
   ok(rgb2hex($('.loading-bar').css('background-color')) == '#FF002F')
 })
 
+test('chain api', function () {
+  var loading = appLoading.start('yellow').stop().setColor('orange').start()
+  ok(typeof loading === 'object')
+})
+
 function rgb2hex(orig){
    var rgb = orig.replace(/\s/g,'').match(/^rgba?\((\d+),(\d+),(\d+)/i);
    var hex = (rgb && rgb.length === 4) ? "#" +
